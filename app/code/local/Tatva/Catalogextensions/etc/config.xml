@@ -138,10 +138,10 @@
 				<title>New Products</title>
 				<type>Recently Added</type>
 			</config4>
-			<!--<config5>
+			<config5>
 				<active>0</active>
 				<title>All Products</title>
-			</config5>-->
+			</config5>
 		</catalogextensions>
 	</default>
 </config>

@@ -15,10 +15,7 @@ class Tatva_Catalogextensions_Block_Newproduct_List extends Mage_Catalog_Block_P
 	
 	protected function _getProductCollection()
     {
-		$type = Mage::getStoreConfig('catalogextensions/config4/type'); 
-		if($type == 'Recently Added') 
-		{
-        parent::__construct();
+	   parent::__construct();
 
         $products = Mage::getModel('catalog/product')->getCollection()
             ->addAttributeToSort("entity_id","DESC")
@@ -35,34 +32,6 @@ class Tatva_Catalogextensions_Block_Newproduct_List extends Mage_Catalog_Block_P
         $this->_productCollection = $products;
 
         return $this->_productCollection;
-		}
-		else
-		{
-		   parent::__construct();	
-        $storeId    = Mage::app()->getStore()->getId();
-        $todayDate  = Mage::app()->getLocale()->date()->toString(Varien_Date::DATETIME_INTERNAL_FORMAT);
-
-        $products = Mage::getModel('catalog/product')->getCollection()
-            ->addAttributeToSelect('*')
-            ->addStoreFilter($storeId)
-            ->addAttributeToFilter('news_from_date', array('date' => true, 'to' => $todayDate))
-            ->addAttributeToFilter('news_to_date', array('or'=> array(
-                    0 => array('date' => true, 'from' => $todayDate),
-                    1 => array('is' => new Zend_Db_Expr('null')))
-                ), 'left')
-            ->addAttributeToSort('news_from_date', 'desc')
-    		->setPageSize($this->get_prod_count())
-            ->addAttributeToSort($this->get_order(), $this->get_order_dir())
-            ->setCurPage($this->get_cur_page());
-
-        Mage::getSingleton('catalog/product_status')->addVisibleFilterToCollection($products);
-        Mage::getSingleton('catalog/product_visibility')->addVisibleInCatalogFilterToCollection($products);
-        Mage::getSingleton('cataloginventory/stock')->addInStockFilterToCollection($products);
-
-        $this->_productCollection = $products;
-
-        return $this->_productCollection;
-		}
     }
 
     function get_prod_count()

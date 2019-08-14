@@ -161,7 +161,7 @@
                         </title>
                     </fields>
                 </config4>
-				<!--<config5 translate="label" module="catalogextensions">
+				<config5 translate="label" module="catalogextensions">
                     <label>All Product Configuration</label>
                     <frontend_type>text</frontend_type>
                     <sort_order>50</sort_order>
@@ -181,13 +181,13 @@
                         <title translate="label" module="catalogextensions">
                             <label>Title</label>
                             <frontend_type>text</frontend_type>
-                            <sort_order>30</sort_order>
+                            <sort_order>40</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </title>
                     </fields>
-                </config5>    -->           
+                </config5>       
              </groups>
         </catalogextensions>
     </sections>
