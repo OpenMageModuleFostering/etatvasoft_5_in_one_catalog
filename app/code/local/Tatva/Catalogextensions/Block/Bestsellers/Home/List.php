@@ -16,10 +16,16 @@ class Tatva_Catalogextensions_Block_Bestsellers_Home_List extends Tatva_Cataloge
 		protected function _getProductCollection()
     	{
         parent::__construct();
-        $storeId    = Mage::app()->getStore()->getId();
+        
+        $today = time();
+        $last = $today - (60*60*24*30);
+        $from = date("Y-m-d", $last);
+        $to = date("Y-m-d", $today);
+        
+        $storeId = Mage::app()->getStore()->getId();
         $products = Mage::getResourceModel('reports/product_collection')
             ->addAttributeToSelect('*')
-			->addOrderedQty()
+			->addOrderedQty($from, $to)
             ->setStoreId($storeId)
             ->addStoreFilter($storeId)
             ->setOrder('ordered_qty', 'desc')
@@ -29,18 +35,21 @@ class Tatva_Catalogextensions_Block_Bestsellers_Home_List extends Tatva_Cataloge
 
 		if(Mage::getStoreConfig('catalogextensions/config1/max_product'))
         {
-            $products->setPageSize(Mage::getStoreConfig('catalogextensions/config2/max_product'));
+            $products->setPageSize(Mage::getStoreConfig('catalogextensions/config1/max_product'));
         }
 
 		$productFlatData = Mage::getStoreConfig('catalog/frontend/flat_catalog_product');
 		if($productFlatData == "1")
 		{
 			$products->getSelect()->joinLeft(
-	                array('flat' => 'catalog_product_flat_1'),
+	                array('flat' => 'catalog_product_flat_'.$storeId),
 	                "(e.entity_id = flat.entity_id ) ",
-	                array(
-	                   'flat.name AS name','flat.image AS small_image','flat.price AS price','flat.minimal_price as minimal_price','flat.special_price as special_price','flat.special_from_date AS special_from_date','flat.special_to_date AS special_to_date'
-	                )
+	                //array(
+//	                   'flat.name AS name','flat.image AS small_image','flat.price AS price','flat.minimal_price as minimal_price','flat.special_price as special_price','flat.special_from_date AS special_from_date','flat.special_to_date AS special_to_date'
+//	                )
+					array(
+	                   'flat.name AS name','flat.small_image AS small_image','flat.price AS price','flat.special_price as special_price','flat.special_from_date AS special_from_date','flat.special_to_date AS special_to_date'
+					)
 	            );
 		}
 
