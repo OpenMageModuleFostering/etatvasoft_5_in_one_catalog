@@ -142,6 +142,11 @@
 				<active>0</active>
 				<title>All Products</title>
 			</config5>
+			<config6>
+				<active>0</active>
+				<max_product>3</max_product>
+				<title>Promotional Products</title>
+			</config6>
 		</catalogextensions>
 	</default>
 </config>
