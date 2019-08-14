@@ -35,7 +35,7 @@
             </block>
 		</reference>
     </catalogextensions_index_mostviewed>
-	<catalogextensions_index_newrecent>
+	<catalogextensions_index_newproduct>
         <reference name="content">
 			<block type="catalogextensions/newproduct_list" name="newrecent_list" template="catalog/product/list.phtml" >
 				<block type="catalog/product_list_toolbar" name="product_list_toolbar" template="catalog/product/list/toolbar.phtml">
@@ -44,7 +44,7 @@
                 <action method="setToolbarBlockName"><name>product_list_toolbar</name></action>
             </block>
 		</reference>
-    </catalogextensions_index_newrecent>
+    </catalogextensions_index_newproduct>
 	<catalogextensions_index_allproduct>
 		<reference name="content">
         	<block type="catalogextensions/allproducts_list" name="product_all_list" template="catalog/product/list.phtml">
