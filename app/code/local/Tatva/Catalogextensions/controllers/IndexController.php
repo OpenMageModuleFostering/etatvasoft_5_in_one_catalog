@@ -1,4 +1,5 @@
 <?php
+
 class Tatva_Catalogextensions_IndexController extends Mage_Core_Controller_Front_Action
 {
     public function indexAction()
@@ -120,6 +121,38 @@ class Tatva_Catalogextensions_IndexController extends Mage_Core_Controller_Front
 
 		$this->loadLayout(); 
 		$this->getLayout()->getBlock('head')->setTitle('All products');    
+		$this->renderLayout();
+    }
+	
+	public function promotionalAction()
+    {
+
+		$url = Mage::getUrl('no-route'); 
+
+		$enable = Mage::getStoreConfig('catalogextensions/config6/active');
+		if($enable != 1) 
+		{
+			Mage::app()->getFrontController()->getResponse()->setRedirect($url);
+		}
+
+		$this->loadLayout(); 
+		$this->getLayout()->getBlock('head')->setTitle('Promotional Products');    
+		$this->renderLayout();
+    }
+
+	public function recentlyorderedAction()
+    {
+
+		$url = Mage::getUrl('no-route'); 
+
+		$enable = Mage::getStoreConfig('catalogextensions/config7/active');
+		if($enable != 1) 
+		{
+			Mage::app()->getFrontController()->getResponse()->setRedirect($url);
+		}
+
+		$this->loadLayout(); 
+		$this->getLayout()->getBlock('head')->setTitle('Recently Ordered Products');    
 		$this->renderLayout();
     }
 	
