@@ -31,14 +31,14 @@
  * @see Mage_Catalog_Block_Product_List
  */
 ?>
-<?php  
+<?php
 $store = Mage::app()->getStore();
 $code  = $store->getCode();
-$enable = Mage::getStoreConfig('catalogextensions/config8/active',$code);
+$enable = Mage::getStoreConfig('catalogextensions/config7/active',$code);
 ?>
 <?php if($enable == 1) { ?>
 <div class="maintitle">
-            <div class="titlemain"><?php echo Mage::getStoreConfig('catalogextensions/config8/title',$code); ?></div>
+            <div class="titlemain"><?php echo Mage::getStoreConfig('catalogextensions/config7/title',$code); ?></div>
             <div class="viewall"><a href="<?php echo $this->getUrl('catalogextensions/index/recentlyordered'); ?>"><?php echo $this->__('View All') ?></a></div>
 </div>
 <?php echo $this->getLayout()->createBlock('catalogextensions/lastordered_home_list')->setTemplate('catalog/product/list.phtml')->toHtml(); ?>

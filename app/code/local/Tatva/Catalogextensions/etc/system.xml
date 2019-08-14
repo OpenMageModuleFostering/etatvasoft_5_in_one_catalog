@@ -1,18 +1,18 @@
 <?xml version="1.0"?>
 <config>
     <tabs>
-        <catalogextensions translate="label" module="catalogextensions">
-            <label>Catalog Supporting Extensions</label>
+        <tatva translate="label" module="catalogextensions">
+            <label>Tatvasoft</label>
             <sort_order>101</sort_order>
-        </catalogextensions>
+        </tatva>
     </tabs>
     <sections>
         <catalogextensions translate="label" module="catalogextensions">
             <class>separator-top</class>
             <label>Catalog Extensions Configuration</label>
-            <tab>catalogextensions</tab>
+            <tab>tatva</tab>
             <frontend_type>text</frontend_type>
-            <sort_order>10</sort_order>
+            <sort_order>20</sort_order>
             <show_in_default>1</show_in_default>
             <show_in_website>1</show_in_website>
             <show_in_store>1</show_in_store>

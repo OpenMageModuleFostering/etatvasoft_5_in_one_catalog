@@ -1,4 +1,5 @@
 <?php
+
 class Tatva_Catalogextensions_IndexController extends Mage_Core_Controller_Front_Action
 {
     public function indexAction()
@@ -144,7 +145,7 @@ class Tatva_Catalogextensions_IndexController extends Mage_Core_Controller_Front
 
 		$url = Mage::getUrl('no-route'); 
 
-		$enable = Mage::getStoreConfig('catalogextensions/config8/active');
+		$enable = Mage::getStoreConfig('catalogextensions/config7/active');
 		if($enable != 1) 
 		{
 			Mage::app()->getFrontController()->getResponse()->setRedirect($url);
