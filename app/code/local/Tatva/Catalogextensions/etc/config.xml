@@ -147,6 +147,11 @@
 				<max_product>3</max_product>
 				<title>Promotional Products</title>
 			</config6>
+			<config7>
+				<active>0</active>
+				<max_product>3</max_product>
+				<title>Recently Ordered Products</title>
+			</config7>
 		</catalogextensions>
 	</default>
 </config>

@@ -23,8 +23,8 @@ class Tatva_Catalogextensions_Block_Newproduct_Home_List extends Tatva_Catalogex
             ->addAttributeToSelect('*')
             ->addAttributeToSort("entity_id","DESC")
 			->addAttributeToSelect(array('name', 'price', 'small_image'))
-   			->setVisibility(Mage::getSingleton('catalog/product_visibility')->getVisibleInSiteIds());
-        
+   			->setVisibility(Mage::getSingleton('catalog/product_visibility')->getVisibleInSiteIds())
+        	->setOrder($this->get_order(), $this->get_order_dir());
         if(Mage::getStoreConfig('catalogextensions/config4/max_product'))
         {
             $products->setPageSize(Mage::getStoreConfig('catalogextensions/config4/max_product'));
