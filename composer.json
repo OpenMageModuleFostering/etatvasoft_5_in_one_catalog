@@ -1,0 +1,16 @@
+{
+    "name": "OpenMageModuleFostering/Etatvasoft_5_In_one_catalog",
+    "type": "magento-module",
+    "license": "Open-Software-License-(OSL)",
+    "homepage": "",
+    "description": "Homepage is the main visual part of any website.  It's very important to show some meaningful ",
+    "authors": [
+    {
+        "name": "Etatvasoft",
+        "email": "etatvasoft.magentodevelopment@gmail.com"
+    }
+],
+    "suggest": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}
